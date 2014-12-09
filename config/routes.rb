@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  root to: "home#index"
+
+
+#As a user
+#home
+#about
+#login
+#signin
+
+#as a user logged
+# create a new activity
+#Edit one activity
+#show all activities
+# destroy an activity
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
