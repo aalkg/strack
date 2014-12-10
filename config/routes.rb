@@ -3,6 +3,24 @@ Rails.application.routes.draw do
   root to: "home#index"
 
 
+
+#activities
+
+
+  post 'activities/create', to: 'activities#create', as: :create_activity
+
+  resources :users do
+    resources :activities, only: [:new, :create, :edit, :update, :destroy]
+  end
+  resources :activities, only: [:show, :index]
+#as a user logged in I want to
+#activities#index
+#activities#create
+#activities#new
+#activities#show
+#activities#edit
+
+
 #As a user
 #home
 #about
@@ -10,12 +28,6 @@ Rails.application.routes.draw do
 #signin
 
 #as a user logged
-# create a new activity
-#Edit one activity
-#show all activities
-# destroy an activity
-
-
 
 
 

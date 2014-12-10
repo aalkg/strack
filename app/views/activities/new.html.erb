@@ -1,0 +1,7 @@
+<%= simple_form_for [@user, @activity] do |f| %>
+  <%= f.input :metric, collection: @metrics, label_method: :name,:value_method => :id,:label => "Metric" ,
+  :include_blank => false %>
+  <%= f.text_field :data, label: 'Insert data' %>
+  <%= f.date_field :date, label: 'Insert date' %>
+  <%= f.button :submit %>
+<% end %>
