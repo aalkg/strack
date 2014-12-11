@@ -7,12 +7,13 @@ Rails.application.routes.draw do
 #activities
 
 
-  post 'activities/create', to: 'activities#create', as: :create_activity
+  # post 'activities/create', to: 'activities#create', as: :create_activity
 
   resources :users do
     resources :activities, only: [:new, :create, :edit, :update, :destroy]
   end
-  resources :activities, only: [:show, :index]
+  resources :activities, only: [:show, :index, :new, :create]
+
 #as a user logged in I want to
 #activities#index
 #activities#create
