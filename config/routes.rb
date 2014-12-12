@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "home#index"
 
 
-
 #activities
 
 
@@ -14,21 +13,7 @@ Rails.application.routes.draw do
   end
   resources :activities, only: [:show, :index, :new, :create]
 
-#as a user logged in I want to
-#activities#index
-#activities#create
-#activities#new
-#activities#show
-#activities#edit
 
-
-#As a user
-#home
-#about
-#login
-#signin
-
-#as a user logged
 
 
 
