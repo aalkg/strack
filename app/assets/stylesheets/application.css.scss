@@ -4,3 +4,8 @@
 @import "navbar";
 @import "footer";
 @import "home";
+
+.alert, .notice {
+  float: left;
+  margin-top: 40px;
+}
