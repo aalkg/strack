@@ -1,34 +1,32 @@
 class ActivitiesController < ApplicationController
-  before_action :set_user, except: [:show, :index]
   before_action :activity_params, only: [:create, :update]
   before_action :find_activity, only: [:show]
-  skip_before_action :authenticate_user!
+
 
   def index
+    @activity = Activity.new
     @activities = Activity.all
+    @categories = ['Basketball', 'Football', 'Running']
   end
 
   def new
-    @activity = @user.activities.build()
+    @activity = current_user.activities.build()
     @metrics = Metric.all
   end
 
   def create
-    @activity = @user.activities.create(activity_params)
-    @activity.user = current_user
-    @activity.save
-    redirect_to activities_path(@activity)
+    @activity = current_user.activities.build(activity_params)
+    if @activity.save
+      redirect_to activity_path(@activity)
+    else
+      render :new
+    end
   end
 
   def show
-    @activity = @user.activities.create(activity_params)
   end
 
   private
-
-  def set_user
-    @user = current_user
-  end
 
   def activity_params
     params.require(:activity).permit(:user_id, :metric_id, :data, :date)
@@ -38,3 +36,4 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 end
+
