@@ -1,3 +1,7 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 .row {
 padding-top: 0px;
 }
@@ -7,6 +11,9 @@ color: white;
 padding-top:3em;
 padding-bottom: 3em;
 font-family: 'lobster', cursive;
+bottom: 0;
+width: 100%;
+position: absolute;
 }
 
 h3 {
