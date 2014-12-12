@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .wrapper {
-background-image: assets-url(nike_running.jpg);
-background-size: cover;
-height: 650px;
-font-family: 'lobster','cursive';
-padding-top: 160px;
-text-align: center;
-color: white;
+  background-image: asset-url("nike_running.jpg");
+  background-size: cover;
+  height: 650px;
+  font-family: 'lobster','cursive';
+  padding-top: 160px;
+  text-align: center;
+  color: white;
 }
 .feature {
   margin-top: 4em;
