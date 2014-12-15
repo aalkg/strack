@@ -1,1 +1,85 @@
 SHOW ALL ACTIVITIES
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>--- TODO ---</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>§
+    <![endif]-->
+  </head>
+  <body>
+
+  <div class= "page"></div>
+
+  <nav class="sidenav">
+    <ul class="pagenav">
+      <li class><a href="">Device</a>
+      </li>
+      <li class><a href="">File</a>
+      </li>
+      <li class><a href="">Manual</a>
+      </li>
+    </ul>
+  </nav>g
+
+    <div>
+    <h2 class="">Manual Entry</h2>
+  <%= simple_form_for [@user, @activity] do |f| %>
+
+  <h4>Sport</h4>
+    <div class="form-inputs">
+    <%= f.text_field :data, label: 'Insert data' %>
+    </div>
+
+    <div class="form-inputs">
+    <%= f.input :metric, collection: @metrics, label_method: :name,:value_method => :id,:label => "Metric" ,
+    :include_blank => false %>
+
+    <div class="form-inputs">
+    <%= f.text_field :data, label: 'Insert data' %>
+    </div>
+
+    </div>
+    <div class="form-inputs">
+    <%= f.input :metric, collection: @metrics, label_method: :name,:value_method => :id,:label => "Metric" ,
+    :include_blank => false %>
+    </div>
+
+    <div class="form-inputs">
+    <%= f.text_field :data, label: 'Insert data' %>
+    </div>
+    <h4>Date</h4>
+
+    <div class="form-inputs">
+    <%= f.date_field :date, label: 'Insert date' %>
+    </div>
+
+    <div class="form-inputs">
+    <%= f.button :submit %>
+    </div>
+
+    </div>
+  </div>
+  <% end %>
+
+
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

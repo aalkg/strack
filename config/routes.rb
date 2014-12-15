@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # post 'activities/create', to: 'activities#create', as: :create_activity
 
   resources :users do
-    resources :activities, only: [:new, :create, :edit, :update, :destroy]
+    resources :activities, only: [:new, :create, :edit, :update, :destroy ]
   end
   resources :activities, only: [:show, :index, :new, :create]
 

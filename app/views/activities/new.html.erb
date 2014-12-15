@@ -1,32 +1,157 @@
-<h2>Manual Entry</h2>
-<%= simple_form_for [@user, @activity] do |f| %>
 
-  <h4>Sport type</h4>
-  <div class="form-inputs">
-  <%= f.text_field :data, label: 'Insert data' %>
-  </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="form-inputs">
-  <%= f.input :metric, collection: @metrics, label_method: :name,:value_method => :id,:label => "Metric" ,
-  :include_blank => false %>
+    <title>--- TODO ---</title>
 
-  <div class="form-inputs">
-  <%= f.text_field :data, label: 'Insert data' %>
-  </div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
-  </div>
-   <div class="form-inputs">
-  <%= f.input :metric, collection: @metrics, label_method: :name,:value_method => :id,:label => "Metric" ,
-  :include_blank => false %>
-  </div>
-  <div class="form-inputs">
-  <%= f.text_field :data, label: 'Insert data' %>
-  </div>
-  <h4>Date</h4>
-  <div class="form-inputs">
-  <%= f.date_field :date, label: 'Insert date' %>
-  </div>
-  <div class="form-inputs">
-  <%= f.button :submit %>
-  </div>
-<% end %>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+   <nav class="sidenav">
+<ul class="pagenav" id="uploadOptions">
+<li class="">
+<a href="/upload/device?utm_source=upload-nav">Device</a>
+</li>
+<li class="" data-timex-tooltip="<div id='timex-tooltip'>Plug in your TIMEX<sup>&amp;reg;</sup> watch and upload your activity files directly.</div>" id="from-file-js">
+<a href="/upload/select?utm_source=upload-nav">File</a>
+</li>
+<li class="selected">
+<a href="/upload/manual?utm_source=upload-nav">Manual</a>
+</li>
+</ul>
+</nav>
+
+
+<div class="manual-entry">
+<form accept-charset="UTF-8" action="/activities" class="activity-run" id="new_activity" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="vgbr8IH8xAe3g6a4YepgmRNNwNZau/iCbkNWJ/+oll0="></div>
+<input id="after_create_path" name="after_create_path" type="hidden">
+<div class="inline-inputs marginless mb-lg">
+<div class="input-field">
+<div class="drop-down-menu upload-type enabled" id="activity-type-dd" tabindex="0">
+<label class="mb-xs">Activity Type</label>
+<input id="activity_type" name="activity[type]" size="30" type="hidden" value="Run">
+<ul class="options">
+
+<li data-value="Ride">
+<a>Ride</a>
+</li>
+<li data-value="Run">
+<a>Run</a>
+<li data-value="Baketball">
+<a>Basketball</a>
+</li>
+</li>
+<li data-value="Swim">
+<a>Swim</a>
+
+</li>
+</ul>
+</div>
+</div>
+<div class="input-field">
+<label class="mb-xs" for="activity_name">Activity Name</label>
+<input aria-required="true" autofocus="autofocus" id="activity_name" name="activity[name]" required="required" size="30" type="text" class="valid">
+</div>
+<div class="input-field upload-filters va-b">
+</div>
+</div>
+<div class="inline-inputs marginless mb-lg">
+<div class="input-field">
+<fieldset class="spans7 upload-duration">
+<legend>Duration</legend>
+<input id="activity_elapsed_time_hours" max="98" min="0" name="activity[elapsed_time_hours]" placeholder="1" type="number" value="1">
+<label class="hours" for="activity_elapsed_time_hours">
+<abbr title="hours">hr</abbr>
+</label>
+<input aria-required="true" id="activity_elapsed_time_minutes" max="59" min="0" name="activity[elapsed_time_minutes]" placeholder="00" required="required" type="number" value="00">
+<label for="activity_elapsed_time_minutes">
+<abbr title="minutes">min</abbr>
+</label>
+<input id="activity_elapsed_time_seconds" max="59" min="0" name="activity[elapsed_time_seconds]" placeholder="00" type="number" value="00">
+<label for="activity_elapsed_time_seconds">
+<abbr title="seconds">s</abbr>
+</label>
+</fieldset>
+</div>
+<div class="input-field upload-distance">
+<label for="activity_distance">Distance</label>
+<input id="activity_distance" max="9999" min="0.01" name="activity[distance]" type="number">
+<div class="drop-down-menu enabled" id="distance-unit-dd" tabindex="0">
+<label class="vh" for="activity_distance_unit">Distance Unit</label>
+<input id="activity_distance_unit" name="activity[distance_unit]" size="30" type="hidden" value="km">
+<div class="selection">kilometers</div>
+<ul class="options">
+<li data-value="km" selected="">
+<a>kilometers</a>
+</li>
+<li data-value="m">
+<a>meters</a>
+</li>
+<li data-value="mi">
+<a>miles</a>
+</li>
+<li data-value="yd">
+<a>yards</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row upload-alt-section mb-lg">
+<hr class="mb-lg mt-lg">
+<div class="spans8">
+<div class="inline-inputs marginless mb-lg">
+<div class="input-field upload-date">
+<input id="activity_start_date_iso_8601" name="activity[start_date_iso_8601]" type="hidden" value="2014-12-15T11:13:16.963Z">
+<label for="activity_start_date">Date</label>
+<input aria-required="true" id="activity_start_date" name="activity[start_date]" required="required" size="30" type="text" value="12/15/2014" class="hasDatepicker">
+</div>
+<div class="input-field upload-time">
+<label for="activity_start_time_of_day">Time <span class="small time-format">HH:MM (AM/PM)</span></label>
+<input aria-required="true" id="activity_start_time_of_day" name="activity[start_time_of_day]" required="required" type="text" value="08:00" autocomplete="off" class="ui-timepicker-input">
+</div>
+<div class="input-field upload-private va-b">
+</div>
+</div>
+<div class="spans8">
+<div class="upload-workout-type run-only" id="workout-type">
+</div>
+<label for="activity_description">Description</label>
+<textarea class="upload-description marginless" id="activity_description" name="activity[description]" placeholder="Describe your activity. How did it go?"></textarea>
+</div>
+</div>
+<div class="upload-controls mb-xl">
+<input class="btn-primary" type="submit" value="Create">
+<a class="cancel" href="/">Cancel</a>
+</div>
+</form>
+
+</div>
+</div>
+
+</div>
+
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+
+

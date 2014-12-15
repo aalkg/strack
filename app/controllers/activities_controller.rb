@@ -23,6 +23,10 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def import
+    @activity = Activity.import(params[:file])
+  end
+
   def show
   end
 
