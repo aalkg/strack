@@ -1,17 +1,30 @@
-<nav class="sidenav">
-  <ul class="pagenav">
-    <li class><a href="">Device</a>
-    </li>
-    <li class><a href="">File</a>
-    </li>
-    <li class><a href="">Manual</a>
-    </li>
-  </ul>
-</nav>
 
-<%= simple_form_for @activity do |f| %>
-  <%= f.association :user %>
-  <%= f.association :metric %>
-  <%= f.input :user_id,  wrapper_html: { class: 'user_id' } %>
-  <%= f.input :metric_id, collection: 1..30 %>
+<div class="manual adding">
+  <div class="lead">
+    <div class="col-sm-offset-4 col-sm-4">
+
+      <%= simple_form_for @activity do |f| %>
+        <div class="btn-group" role="group" aria-label="sports">
+          <h3>Pick a sport</h3>
+          <% Sport.all.each do |sport| %>
+            <button type="button" class="btn btn-default"><%= sport.name %></button>
+          <% end %>
+        </div>
+        <%= f.input :date, as: :string %>
+        <%= f.input :metric %>
+
+        <%= f.input :data, collection: 0..30 %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= content_for(:js) do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#activity_date').datetimepicker();
+    });
+  </script>
 <% end %>
