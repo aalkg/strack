@@ -4,9 +4,7 @@ class ActivitiesController < ApplicationController
 
 
   def index
-    @activity = Activity.new
     @activities = Activity.all
-    @categories = ['Basketball', 'Football', 'Running']
   end
 
   def new
