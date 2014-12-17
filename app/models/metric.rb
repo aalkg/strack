@@ -1,4 +1,5 @@
 class Metric < ActiveRecord::Base
   belongs_to :sport
-  #validates :name, :sport_id, :data_type, presence: true
+  has_many :activities, dependent: :destroy
+  validates :name, :sport, :data_type, presence: true
 end

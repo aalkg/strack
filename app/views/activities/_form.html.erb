@@ -1,0 +1,64 @@
+
+<div id="activity-form">
+  <%= simple_form_for @activity, html: { class: "form-box" }, remote: true do |f| %>
+    <div class="header text-center">
+      <h3>Enter a performance</h3>
+    </div>
+
+    <div class="body text-center">
+
+      <div class="btn-group" role="group" aria-label="sports">
+        <% Sport.all.each do |sport| %>
+          <button type="button" class="btn btn-default btn-sport" data-sport-id="<%= sport.id %>"><%= sport.name %></button>
+        <% end %>
+      </div>
+
+
+      <%= f.input :date, as: :string, placeholder: "When was your performance?", input_html: {class: "date-placeholder input-lg"}, label: false%>
+
+
+      <div class="row">
+        <div class="col-xs-6">
+           <%= f.input :data, label: false, placeholder: "enter your perf"%>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :metric_id, as: :select, label: false%>
+        </div>
+      </div>
+
+
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
+
+
+<%= content_for(:js) do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#activity_date').datetimepicker();
+
+      var metrics = <%= raw Metric.all.to_json %>;
+      var $metricsInput = $("#activity_metric_id");
+
+      $(".btn-sport").on("click", function(){
+
+        var sportId = $(this).data("sport-id");
+
+        $metricsInput.html("");
+
+        for (var i in metrics) {
+          var metric = metrics[i];
+          if (metric.sport_id === sportId){
+            var $option = $("<option>");
+            $option.text(metric.name);
+            $option.attr("value", metric.id);
+            $metricsInput.append($option);
+          }
+        }
+      });
+
+
+    });
+  </script>
+<% end %>
