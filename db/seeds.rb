@@ -20,6 +20,17 @@ marathon_time.sport = running
 marathon_time.save
 
 
+rebounds = Metric.new(name: 'nb of rebounds', data_type: "rebounds")
+rebounds.sport = basket
+rebounds.save
+
+
+user = User.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+
+Activity.create(metric: goals_number, user: user, data: "3")
+Activity.create(metric: sprint_time, user: user, data: "13")
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #

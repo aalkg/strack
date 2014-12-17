@@ -1,1 +1,13 @@
+<div class="container">
+  <div class="col-xs-6">
+    <%= render "form" %>
+  </div>
 
+  <div class="col-xs-6">
+    <% current_user.activities.each do |activity| %>
+      <div class="row" id="activities">
+        <%= render "card", activity: activity %>
+      </div>
+    <% end %>
+  </div>
+</div>
