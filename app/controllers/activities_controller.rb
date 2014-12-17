@@ -4,9 +4,7 @@ class ActivitiesController < ApplicationController
 
 
   def index
-    @activity = Activity.new
     @activities = Activity.all
-    @categories = ['Basketball', 'Football', 'Running']
   end
 
   def new
@@ -21,6 +19,10 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def import
+    @activity = Activity.import(params[:file])
   end
 
   def show

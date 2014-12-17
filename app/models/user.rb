@@ -7,7 +7,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable,:omniauth_providers => [ :facebook ]
 
-           def self.find_for_facebook_oauth(auth)
+  # def self.import(file)
+  #   CSV.foreach(file.path, headers: true) do |row|
+  #     Users.create! row.to_hash
+  #   end
+  # end
+
+  def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -19,4 +25,6 @@ class User < ActiveRecord::Base
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
   end
+
+
 end
