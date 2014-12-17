@@ -27,13 +27,10 @@ $input-color-placeholder: lighten($input-border, 5%);
 @import "navbar";
 @import "footer";
 @import "home";
-<<<<<<< HEAD
 @import "new";
-=======
 @import "fa-placeholder";
 @import "form";
 @import "card";
->>>>>>> master
 
 body {
   margin: 0 0 100px; /* bottom = footer height */
