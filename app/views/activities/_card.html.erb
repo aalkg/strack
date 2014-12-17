@@ -1,0 +1,22 @@
+ <div class="card" id="card_<%= activity.id %>">
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="sport">
+        <h4><%= activity.metric.sport.name %></h4>
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div class="performance">
+        <p><strong><%= activity.data %></strong> <%= activity.metric.data_type %></p>
+        <p class="muted"><%= activity.metric.name %></p>
+        <p class="muted">performed on <strong><%= activity.date.strftime("%d/%m/%Y") %></strong></p>
+        <%= link_to activity_path(activity), method: :delete, remote: true do %>
+          <i class="fa fa-trash-o"></i>
+        <% end %>
+        <%= link_to activity_path(activity) do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.card{
+  background: white;
+  border: 1px solid lightgrey;
+  margin-bottom: 10px;
+  .muted{
+    color: lightgrey;
+    font-weight: 300;
+  }
+  .sport{
+    padding-top: 20px;
+    text-align: center;
+  }
+  .performance{
+    border-left: 1px dashed lightgrey;
+    padding-left: 20px;
+    padding: 30px;
+  }
+}
