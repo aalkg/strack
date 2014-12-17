@@ -27,6 +27,7 @@ $input-color-placeholder: lighten($input-border, 5%);
 @import "navbar";
 @import "footer";
 @import "home";
+@import "new";
 @import "fa-placeholder";
 @import "form";
 @import "card";
@@ -38,6 +39,10 @@ body {
 .alert, .notice {
   float: left;
   margin-top: 40px;
+}
+
+body{
+  padding-top: 60px;
 }
 
 .btn {
@@ -52,5 +57,3 @@ body {
 .btn-group {
   margin-bottom: 20px;
 }
-
-

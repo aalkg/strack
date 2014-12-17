@@ -1,0 +1,34 @@
+.feature {
+  margin-top: 8em;
+  margin-bottom: 8em;
+  padding-top: 8em;
+  padding-bottom: 8em;
+
+}
+
+.lead {
+  background-image: asset-url("nike_running.jpg");
+  background-size: cover;
+  height: 650px;
+  font-family: 'lobster','cursive';
+  padding-top: 160px;
+  text-align: center;
+  color: white;
+}
+
+.container-new {
+display:block;
+background-color: black;
+
+}
+
+.registration-panel {
+background: rgba(0,0,0,0.75);
+color: #eee;
+margin: 0 auto;
+}
+
+
+h2{
+color: white;
+}
