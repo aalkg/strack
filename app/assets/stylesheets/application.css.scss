@@ -4,6 +4,7 @@
 @import "navbar";
 @import "footer";
 @import "home";
+@import "new";
 
 html {
     position: relative;
@@ -15,4 +16,8 @@ body {
 .alert, .notice {
   float: left;
   margin-top: 40px;
+}
+
+body{
+  padding-top: 60px;
 }
