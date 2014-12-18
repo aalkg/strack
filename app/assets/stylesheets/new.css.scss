@@ -5,11 +5,15 @@
 
 }
 
+.form-inputs {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .sign-up {
   background-image: asset-url("velo-tour-de-france.jpg");
   background-size: cover;
   height: 650px;
-  font-family: 'lobster','cursive';
   padding-top: 150px;
   text-align: center;
   color: white;
@@ -23,22 +27,32 @@ background-color: black;
 
 .registration-panel {
 background: rgba(0,0,0,0.75);
-color: #eee;
+color: lightgrey;
 margin: 0 auto;
+font-family: 'Open Sans';
+  .form{
+    font-family: 'Open Sans';
+  }
 }
 
 
 h2{
 color: white;
+font-family: 'Open Sans';
+font-weight: bold;
+
 }
 
 .sign-in {
  background-image: asset-url("Nike-X-Undercover-Gyakusou-SS13-Sg.jpg");
   background-size: cover;
   height: 650px;
-  font-family: 'lobster','cursive';
+  font-family: 'Open Sans';
   padding-top: 150px;
   text-align: center;
   color: white;
+}
 
+h3 {
+font-family:'Open Sans';
 }
