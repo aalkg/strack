@@ -23,6 +23,12 @@ marathon_time.save
 rebounds = Metric.new(name: 'nb of rebounds', data_type: "rebounds")
 rebounds.sport = basket
 rebounds.save
+points = Metric.new(name: 'nb of points', data_type: "points")
+points.sport = basket
+points.save
+assists = Metric.new(name: 'nb of assists', data_type: "assists")
+assists.sport = basket
+assists.save
 
 
 user = User.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'

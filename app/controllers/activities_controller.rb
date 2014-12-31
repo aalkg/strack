@@ -28,10 +28,14 @@ class ActivitiesController < ApplicationController
   end
 
   def import
-    @activity = Activity.import(params[:file])
   end
 
   def show
+    @activity = Activity.find(params[:id])
+    #@id = @activity.id
+    #respond_to do |format|
+     # format.js
+    #end
   end
 
   private

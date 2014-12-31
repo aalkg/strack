@@ -1,0 +1,42 @@
+ <div class="card" id="card_<%= activity.id %>">
+
+  <div class="row">
+    <div class="col-xs-9">
+      <div class="Athlete">
+        <h4>Kobe Bryant</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <%= current_user.picture %>
+    </div>
+    <div class = "col-xs-6">
+      <div class = "row">
+        <div class="performance col-xs-4">
+          <h4><%= activity.metric.sport.name %></h4>
+        </div>
+        <div class="performance col-xs-4">
+          <h4><%= activity.metric.data_type %></h4>
+        </div>
+         <div class="performance col-xs-4">
+          <h4><%= activity.date.strftime("%d/%m/%Y") %></h4>
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class="performance col-xs-4">
+          <h4><%= activity.metric.sport.name %></h4>
+        </div>
+        <div class="performance col-xs-4">
+          <h4><%= activity.metric.data_type %></h4>
+        </div>
+         <div class="performance col-xs-4">
+          <h4><%= activity.date.strftime("%d/%m/%Y") %></h4>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
