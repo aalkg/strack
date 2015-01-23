@@ -33,16 +33,12 @@ $input-color-placeholder: lighten($input-border, 5%);
 @import "card";
 
 body {
-  margin: 0 0 100px; /* bottom = footer height */
-  padding-top: 100px;
+  margin: 0;
+  padding: 0;
 }
 .alert, .notice {
   float: left;
   margin-top: 40px;
-}
-
-body{
-  padding-top: 60px;
 }
 
 .btn {

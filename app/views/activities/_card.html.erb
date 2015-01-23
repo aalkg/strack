@@ -9,7 +9,7 @@
       <div class="performance">
         <p><strong><%= activity.data %></strong> <%= activity.metric.data_type %></p>
         <p class="muted"><%= activity.metric.name %></p>
-        <p class="muted">performed on <strong><%= activity.date.strftime("%d/%m/%Y") %></strong></p>
+
         <%= link_to activity_path(activity), method: :delete, remote: true do %>
           <i class="fa fa-trash-o"></i>
         <% end %>

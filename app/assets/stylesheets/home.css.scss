@@ -3,27 +3,94 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .wrapper {
-  background-image: asset-url("nike_running.jpg");
+  background:asset-url("hoops_dream.jpg") no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  height: 650px;
-  text-align: center;
-  color: white;
-  padding-top: 160px;
+  height: 100vh;
 
+  color: white;
+  text-align: center;
+
+  position: relative;
+  padding:60px;
+
+  #calltoaction {
+    margin-top: 200px;
+    with:100%;
+
+    h1 {
+      font-size: 25px;
+      letter-spacing: 5px;
+      color: white;
+      text-align: right;
+    }
+  }
+
+  .newsletter {
+    height : 75px;
+    color: #fff;
+    text-align: center;
+
+    h2 {
+      padding: 60px 0 20px 0;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    input:focus {
+      outline: none !important;
+    }
+
+    #mc_embed_signup {
+      display: inline-block;
+      float: right;
+    }
+
+    #mce-EMAIL {
+      display: inline;
+      padding: 0 10px;
+      height: 43px;
+      width: 270px;
+      border: 1px solid #fff;
+      background-color: transparent;
+      font-size: 0.9em;
+      font-family: Open Sans;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    #mc-embedded-subscribe {
+      display: inline;
+      height: 46px;
+      padding: 0 60px;
+      border-radius: 0;
+      background-color: #fff;
+      font-size: 1em;
+      font-family: Open Sans;
+      text-transform: uppercase;
+      color: #333;
+      cursor: pointer;
+
+      webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background-color: transparent;
+        color: #fff;
+      }
+    }
+
+    #mc_embed_signup div.mce_inline_error {
+      display: none;
+    }
+  }
 }
+
 .feature {
   margin-top: 4em;
   margin-bottom: 6em;
-}
-
-h1{
-  font-size: 80px;
-  letter-spacing:10px;
-  color: white;
-}
-
-h2 {
-letter-spacing: 5px;
-font-size: 30px;
-font-family: 'pacifico'
 }

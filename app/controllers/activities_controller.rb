@@ -32,10 +32,11 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-    #@id = @activity.id
-    #respond_to do |format|
-     # format.js
-    #end
+    @id = @activity.id
+    @activity.show
+    respond_to do |format|
+     format.js
+    end
   end
 
   private
